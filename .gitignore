@@ -1,0 +1,4 @@
+obj/
+GameData/AutoStrutFixMod/*.dll
+GameData/*.zip
+__pycache__/

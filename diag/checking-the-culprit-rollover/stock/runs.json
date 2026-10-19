@@ -1,0 +1,32 @@
+{
+  "tries": 3,
+  "runs": [
+    {
+      "run": "run-1",
+      "try": 1,
+      "partsBefore": 18,
+      "partsAfter": 16,
+      "headingFirst": 163.63104538270915,
+      "headingSecond": 265.7050177144187,
+      "seconds": 30.0
+    },
+    {
+      "run": "run-2",
+      "try": 2,
+      "partsBefore": 18,
+      "partsAfter": 16,
+      "headingFirst": 118.1404717014933,
+      "headingSecond": 243.69816796995238,
+      "seconds": 30.0
+    },
+    {
+      "run": "run-3",
+      "try": 3,
+      "partsBefore": 18,
+      "partsAfter": 16,
+      "headingFirst": 23.373971748558766,
+      "headingSecond": 13.665316480089183,
+      "seconds": 30.0
+    }
+  ]
+}
