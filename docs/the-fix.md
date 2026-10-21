@@ -99,14 +99,14 @@ Fixes puts there), and says so in `KSP.log`:
 
 ```
 [KSPCommunityFixes] Patch AutoStrutDrift applied.
-[AutoStrutFix] Mode OriginalPose: AutoStrutDrift of KSP Community Fixes turned off
+[KSPFixAutoStrut] Mode OriginalPose: AutoStrutDrift of KSP Community Fixes turned off
 ```
 
 In the two twist limit modes, it leaves it on, and says so too:
 
 ```
-[AutoStrutFix] Mode TwistLimitKSPCF: AutoStrutDrift of KSP Community Fixes left on
-[AutoStrutFix] Mode TwistLimit: AutoStrutDrift of KSP Community Fixes left on
+[KSPFixAutoStrut] Mode TwistLimitKSPCF: AutoStrutDrift of KSP Community Fixes left on
+[KSPFixAutoStrut] Mode TwistLimit: AutoStrutDrift of KSP Community Fixes left on
 ```
 
 Without KSP Community Fixes, `OriginalPose` works the same: it sets the joint's anchors and target itself.

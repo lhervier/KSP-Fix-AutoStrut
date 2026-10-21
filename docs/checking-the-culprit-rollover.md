@@ -11,7 +11,7 @@ Harmony and ModuleManager it needs), the base most players run. *On stock* below
 KSP Community Fixes as it ships: its `AutoStrutDrift` patch on. *With this mod* means this install with
 Auto Strut Fix 0.1.0, its log level set to `Debug` in `PluginData/settings.cfg`, in one of its three modes
 (see [The fix](the-fix.md#three-modes)): `OriginalPose`, the default, which turns `AutoStrutDrift` off,
-`TwistLimitKSPCF` and `TwistLimit`, which leave it on. [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer) is installed
+`TwistLimitKSPCF` and `TwistLimit`, which leave it on. [KSP-Util-MCPServer](https://github.com/lhervier/KSP-Util-MCPServer) is installed
 too, to play the protocol by script.
 
 ## The protocol
@@ -94,6 +94,8 @@ the camera fixed, as on stock. Over the time the rover on stock took for one ful
 346°. Recorded in `OriginalPose` mode; in the two other modes, the tries above show the same.*
 
 ### What the log says, in OriginalPose mode
+
+*The log lines quoted on this page come from runs of an earlier version of this mod, when its log prefix was `[AutoStrutFix]`; it is now `[KSPFixAutoStrut]`.*
 
 By the time the main menu shows, KSP Community Fixes has applied `AutoStrutDrift`, and this mod has taken
 it off again:

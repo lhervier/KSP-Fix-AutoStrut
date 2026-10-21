@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace com.github.lhervier.ksp.autostrutfix
+namespace com.github.lhervier.ksp.fix.autostrut
 {
     /// <summary>How the mod makes a rebuilt autostrut hold the vessel's original shape.</summary>
     internal enum FixMode

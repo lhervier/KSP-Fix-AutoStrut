@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>AutoStrutFixMod</AssemblyName>
-    <RootNamespace>com.github.lhervier.ksp.autostrutfix</RootNamespace>
+    <AssemblyName>KSPFixAutoStrut</AssemblyName>
+    <RootNamespace>com.github.lhervier.ksp.fix.autostrut</RootNamespace>
     <Version>0.1.0</Version>
     <Description>Makes the autostruts KSP rebuilds while a vessel is bent hold the vessel's original shape</Description>
     <!-- Straight into the folder that gets copied to the GameData of KSP. -->
-    <OutputPath>GameData\AutoStrutFixMod</OutputPath>
+    <OutputPath>GameData\KSPFixAutoStrut</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <DebugType>none</DebugType>
   </PropertyGroup>

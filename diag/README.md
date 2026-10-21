@@ -10,7 +10,7 @@ Described in [Checking the culprit: a rollover](../docs/checking-the-culprit-rol
 - [checking-the-culprit-rollover/rollover-kerbin.sfs](checking-the-culprit-rollover/rollover-kerbin.sfs):
   the save. Copy it into the folder of a sandbox game, and load it.
 - [automation/run-rollover.py](automation/run-rollover.py): the script that plays it through
-  [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). Python 3 only, nothing to install.
+  [KSP-Util-MCPServer](https://github.com/lhervier/KSP-Util-MCPServer). Python 3 only, nothing to install.
 - `checking-the-culprit-rollover/stock/`, `fix/`, `twist-limit-kspcf/` and `twist-limit/`: for each series,
   on stock, with this mod in its default `OriginalPose` mode, in its `TwistLimitKSPCF` mode and in its
   `TwistLimit` mode, `runs.json` (what the script printed) and `KSP.log`. The screenshots are in

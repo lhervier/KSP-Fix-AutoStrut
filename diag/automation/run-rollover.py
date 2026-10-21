@@ -1,8 +1,8 @@
 """Plays "The rollover protocol": rolls a rover over until it lands back on its wheels with a part broken off,
 then shows whether it turns on the spot.
 
-It drives KSP through KSP-MCPServer, a mod that answers HTTP requests on 127.0.0.1, and needs nothing but
-Python 3: no AI, no package to install. Start KSP with KSP-MCPServer installed, copy rollover-kerbin.sfs into
+It drives KSP through KSP-Util-MCPServer, a mod that answers HTTP requests on 127.0.0.1, and needs nothing but
+Python 3: no AI, no package to install. Start KSP with KSP-Util-MCPServer installed, copy rollover-kerbin.sfs into
 a sandbox game, wait for the main menu, then run:
 
     python run-rollover.py --folder <your sandbox game> --runs 3 --out out
@@ -24,7 +24,7 @@ URL = None
 
 
 def call(tool, **args):
-    """Calls one tool of KSP-MCPServer and returns its answer, decoded from JSON when it is JSON."""
+    """Calls one tool of KSP-Util-MCPServer and returns its answer, decoded from JSON when it is JSON."""
     body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
                        "params": {"name": tool, "arguments": args}}).encode()
     request = urllib.request.Request(URL, body, {"Content-Type": "application/json"})
@@ -40,7 +40,7 @@ def call(tool, **args):
 
 
 def member(path):
-    """A member of the active vessel, as KSP-MCPServer reads it; used only to sort the tries."""
+    """A member of the active vessel, as KSP-Util-MCPServer reads it; used only to sort the tries."""
     return call("get_member", type="FlightGlobals", member="ActiveVessel." + path)["value"]
 
 
@@ -82,7 +82,7 @@ def main():
     parser.add_argument("--settle", type=float, default=10.0, help="seconds to wait before the first screenshot")
     parser.add_argument("--watch", type=float, default=30.0, help="seconds between the two screenshots")
     parser.add_argument("--out", default="out", help="where runs.json and the screenshots go")
-    parser.add_argument("--port", type=int, default=8770, help="the port of KSP-MCPServer")
+    parser.add_argument("--port", type=int, default=8770, help="the port of KSP-Util-MCPServer")
     options = parser.parse_args()
     URL = "http://127.0.0.1:%d/mcp/" % options.port
     os.makedirs(options.out, exist_ok=True)

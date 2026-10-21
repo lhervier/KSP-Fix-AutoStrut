@@ -145,12 +145,12 @@ by hand:
 
 ## Install
 
-Copy the `GameData\AutoStrutFixMod` folder into the `GameData` folder of KSP. It needs
+Copy the `GameData\KSPFixAutoStrut` folder into the `GameData` folder of KSP. It needs
 [Harmony](https://github.com/KSPModdingLibs/HarmonyKSP), as KSP Community Fixes does.
 
 ## Settings
 
-`GameData\AutoStrutFixMod\PluginData\settings.cfg` is read once, when KSP starts:
+`GameData\KSPFixAutoStrut\PluginData\settings.cfg` is read once, when KSP starts:
 
 ```
 // OriginalPose (the default), TwistLimitKSPCF or TwistLimit.
@@ -170,7 +170,7 @@ logLevel = Info
 ## Build
 
 Set `KSPDIR` to the folder of a KSP install with Harmony in its `GameData`, then run `build.bat`: it
-compiles `GameData\AutoStrutFixMod\AutoStrutFixMod.dll`. Installing is up to you.
+compiles `GameData\KSPFixAutoStrut\KSPFixAutoStrut.dll`. Installing is up to you.
 
 ## License
 

@@ -1,4 +1,4 @@
-namespace com.github.lhervier.ksp.autostrutfix
+namespace com.github.lhervier.ksp.fix.autostrut
 {
     /// <summary>How much the mod writes to KSP.log, from the quietest to the most talkative.</summary>
     internal enum LogLevel
@@ -12,7 +12,7 @@ namespace com.github.lhervier.ksp.autostrutfix
     /// <summary>Writes to KSP.log, tagged with the mod's name, filtered by <see cref="Level"/>.</summary>
     internal static class Log
     {
-        private const string Prefix = "[AutoStrutFix] ";
+        private const string Prefix = "[KSPFixAutoStrut] ";
 
         /// <summary>The level messages are filtered at.</summary>
         public static LogLevel Level { get; set; } = LogLevel.Info;

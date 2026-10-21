@@ -1,7 +1,7 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace com.github.lhervier.ksp.autostrutfix
+namespace com.github.lhervier.ksp.fix.autostrut
 {
     /// <summary>
     /// Gives every part joint KSP sets up, attach joints and autostruts alike, a twist range of [−177°, +177°]

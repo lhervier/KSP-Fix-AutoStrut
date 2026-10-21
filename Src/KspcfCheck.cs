@@ -2,7 +2,7 @@ using System.Linq;
 using HarmonyLib;
 using UnityEngine;
 
-namespace com.github.lhervier.ksp.autostrutfix
+namespace com.github.lhervier.ksp.fix.autostrut
 {
     /// <summary>
     /// Once the main menu is reached (KSP Community Fixes has applied its patches by then, and no flight has
@@ -14,7 +14,7 @@ namespace com.github.lhervier.ksp.autostrutfix
     public class KspcfCheck : MonoBehaviour
     {
         private const string KspcfHarmonyId = "KSPCommunityFixes";
-        private const string HarmonyId = "com.github.lhervier.ksp.autostrutfix";
+        private const string HarmonyId = "com.github.lhervier.ksp.fix.autostrut";
 
         private void Start()
         {

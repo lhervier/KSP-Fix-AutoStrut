@@ -2,21 +2,21 @@ using System;
 using HarmonyLib;
 using UnityEngine;
 
-namespace com.github.lhervier.ksp.autostrutfix
+namespace com.github.lhervier.ksp.fix.autostrut
 {
     /// <summary>
     /// Installs the fix once, when KSP starts: from then on, every autostrut KSP builds in flight holds the
     /// vessel's original shape, even when it is built while the vessel is bent.
     /// </summary>
     [KSPAddon(KSPAddon.Startup.Instantly, true)]
-    public class AutoStrutFixMod : MonoBehaviour
+    public class KSPFixAutoStrut : MonoBehaviour
     {
-        private const string HarmonyId = "com.github.lhervier.ksp.autostrutfix";
+        private const string HarmonyId = "com.github.lhervier.ksp.fix.autostrut";
 
         private void Start()
         {
             Settings.Load();
-            Log.Info($"Version {typeof(AutoStrutFixMod).Assembly.GetName().Version}, mode {Settings.Mode}, " +
+            Log.Info($"Version {typeof(KSPFixAutoStrut).Assembly.GetName().Version}, mode {Settings.Mode}, " +
                 $"log level {Log.Level}");
             Harmony harmony = new Harmony(HarmonyId);
             try

@@ -1,6 +1,6 @@
 @echo off
-REM Compiles GameData\AutoStrutFixMod\AutoStrutFixMod.dll. Installing is up to you: copy the
-REM GameData\AutoStrutFixMod folder into the GameData of KSP.
+REM Compiles GameData\KSPFixAutoStrut\KSPFixAutoStrut.dll. Installing is up to you: copy the
+REM GameData\KSPFixAutoStrut folder into the GameData of KSP.
 setlocal
 cd /d "%~dp0"
 
@@ -9,5 +9,5 @@ if not defined KSPDIR (
     exit /b 1
 )
 
-dotnet build AutoStrutFixMod.csproj -c Release -p:KSPDIR="%KSPDIR%"
+dotnet build KSPFixAutoStrut.csproj -c Release -p:KSPDIR="%KSPDIR%"
 exit /b %errorlevel%

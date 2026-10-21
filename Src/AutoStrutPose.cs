@@ -1,7 +1,7 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace com.github.lhervier.ksp.autostrutfix
+namespace com.github.lhervier.ksp.fix.autostrut
 {
     /// <summary>
     /// Makes every autostrut built in flight hold its part where the vessel's original layout puts it relative
