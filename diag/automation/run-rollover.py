@@ -39,11 +39,6 @@ def call(tool, **args):
         return text
 
 
-def member(path):
-    """A member of the active vessel, as KSP-Util-MCPServer reads it; used only to sort the tries."""
-    return call("get_member", type="FlightGlobals", member="ActiveVessel." + path)["value"]
-
-
 def log(*parts):
     print(time.strftime("%H:%M:%S"), *parts, flush=True)
 
@@ -52,7 +47,7 @@ def roll(options):
     """One rollover. Returns the number of parts before and after, and whether every wheel touches the
     ground."""
     call("load_save", folder=options.folder, save=options.save)
-    before = len(member("parts"))
+    before = len(call("list_parts"))
     call("set_controls", wheel_throttle=1.0, wheel_steer=0.0, brakes=False)
     start = time.time()
     while time.time() - start < 60 and call("get_state")["vessel"]["surfaceSpeed"] < options.speed:
@@ -62,10 +57,8 @@ def roll(options):
     # What a player does after a crash: hands off the controls, brakes on.
     call("set_controls", wheel_throttle=0.0, wheel_steer=0.0, brakes=True)
     time.sleep(options.settle)
-    parts = member("parts")
-    wheels = [i for i, name in enumerate(parts) if name.startswith("wheelMed")]
-    grounded = all(member("parts.%d.[ModuleWheels.ModuleWheelSteering].0.wheel.currentState.grounded" % i)
-                   for i in wheels)
+    parts = call("list_parts")
+    grounded = all(p["wheel"]["grounded"] for p in parts if "wheel" in p)
     return before, len(parts), grounded
 
 
