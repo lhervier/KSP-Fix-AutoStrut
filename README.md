@@ -131,6 +131,8 @@ by hand:
   settles onto its wheels or legs. A rover that turns on its own, or a craft that twists, right after a
   load or a launch, and stops after the next load, would be the same trouble. Load a wheeled craft on
   uneven ground a few times, without this mod and with it, and watch its heading with the brakes on.
+  A first case, measured by hand: a heavy rover parked on Eve that slides with its brakes on right after a
+  load, and stays put with this mod ([save and steps](diag/loading-bulldozer-eve/README.md)).
 - **Large stations.** A big station that starts to sway after a load, until it breaks apart, and is fine
   after the next load, may come from the same joints. Load an autostrutted station a few times, without
   this mod and with it, with SAS off and on.
