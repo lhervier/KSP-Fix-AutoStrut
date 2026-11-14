@@ -8,17 +8,17 @@ vessel's original shape, why it does it that way by default, and the other ways 
 The mod has three modes, one or the other, set by `mode` in `PluginData/settings.cfg` and read when KSP
 starts:
 
-- **`OriginalPose`, the default.** The mod sets every autostrut up on the vessel's original shape. The
-  stock joint is left exactly as it is, limits and springs included, and the `AutoStrutDrift` patch of
+- **`OriginalPose`.** The mod sets every autostrut up on the vessel's original shape. The stock joint is
+  left exactly as it is, limits and springs included, and the `AutoStrutDrift` patch of
   [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes), which this replaces, is turned
   off.
 - **`TwistLimitKSPCF`.** The mod gives the twist of the autostruts `AutoStrutDrift` handles a proper range,
   and leaves `AutoStrutDrift` on: `AutoStrutDrift` then brings the parts back by itself. This changes the
   game: the twist of those autostruts is then held by a spring, as their bending is, where stock holds it
   firmly (see [The culprit](the-culprit.md#what-fixing-the-limit-would-change)).
-- **`TwistLimit`.** The same, for every part joint KSP sets up: attach joints, and every autostrut, those
-  `AutoStrutDrift` leaves alone included. This changes the game more: every joint of every vessel then
-  twists as easily as it bends.
+- **`TwistLimit`, the default.** The same, for every part joint KSP sets up: attach joints, and every
+  autostrut, those `AutoStrutDrift` leaves alone included. This changes the game more: every joint of every
+  vessel then twists as easily as it bends.
 
 |   | `OriginalPose` | `TwistLimitKSPCF` | `TwistLimit` |
 |---|---|---|---|
@@ -32,10 +32,10 @@ starts:
 | Downside | moves the part for an instant at each new autostrut (no physics step runs meanwhile) | changes how stiff those autostruts are | changes how stiff every vessel is, where every craft so far was built with joints whose twist does not give |
 
 The two twist limit modes are the other ways out set out in
-[The culprit](the-culprit.md#three-ways-out): they are there to show that the computation of
-`AutoStrutDrift` works once the limit lets it, for the maintainers of KSP Community Fixes to try in game and
-judge. Without KSP Community Fixes, they bring nothing back to the original shape. All three are checked the
-same way, in [Checking the culprit: a rollover](checking-the-culprit-rollover.md).
+[The culprit](the-culprit.md#three-ways-out): they show that the computation of `AutoStrutDrift` works
+once the limit lets it, for the maintainers of KSP Community Fixes to try in game and judge. Without KSP
+Community Fixes, they bring nothing back to the original shape: without it, choose `OriginalPose`. All three
+are checked the same way, in [Checking the culprit: a rollover](checking-the-culprit-rollover.md).
 
 ## How OriginalPose works
 
@@ -70,14 +70,15 @@ it sets it up: attach joints, autostruts, robotic parts' autostruts included. A 
 motions are all locked, is left as it is. The joints that robotic parts and docking ports set up for their
 own motion have limits of their own, and are not touched.
 
-## Why OriginalPose is the default
+## Why TwistLimit is the default
 
 `AutoStrutDrift` leaves the joint set up on the bent pose and turns its target, `targetRotation`, by the
 difference, and its computation is the right one: the twist limit modes show it. What stops it in stock is
-the twist limit of the joints, which holds the twist where the joint was set up; fixing that limit makes
-every joint it is fixed for twist as easily as it bends. Setting the joint up on the right pose needs no
-target at all, and keeps the stock joint exactly as it is: every craft built so far was built with joints
-whose twist does not give.
+the twist limit of the joints, which holds the twist where the joint was set up. `TwistLimit` fixes that
+limit where `PartJoint.SetJointLimits` makes it, for every joint, so that the stock code does what it
+seems to mean, instead of working around it. The price is that every joint then twists as easily as it
+bends, where every craft built so far was built with joints whose twist does not give. `OriginalPose`
+keeps the stock joint exactly as it is, and is the mode to choose without KSP Community Fixes.
 
 ## What it leaves alone
 

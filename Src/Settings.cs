@@ -33,11 +33,11 @@ namespace com.github.lhervier.ksp.fix.autostrut
     internal static class Settings
     {
         /// <summary>How rebuilt autostruts are fixed.</summary>
-        public static FixMode Mode { get; private set; } = FixMode.OriginalPose;
+        public static FixMode Mode { get; private set; } = FixMode.TwistLimit;
 
         /// <summary>
         /// Reads the settings file and applies its log level. A missing file, a missing value or an unknown
-        /// value leaves the default: the original pose, logging at Info.
+        /// value leaves the default: the twist limit of every joint fixed, logging at Info.
         /// </summary>
         public static void Load()
         {

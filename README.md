@@ -77,7 +77,7 @@ of them; removing the mod gives the stock behaviour back at the next load.
 
 **→ Full chapter: [The fix](docs/the-fix.md)**
 
-### `OriginalPose`, the default
+### `OriginalPose`
 
 **How it works.** This mode turns `AutoStrutDrift` of KSP Community Fixes off, and does its job in its
 place. For each autostrut KSP builds in flight, this mod puts the part, for that instant only, where the
@@ -89,8 +89,9 @@ the vessel's own shape, in agreement with the part's other joints.
 everything it sets up, so the mod takes it off when the main menu shows, before any flight. Both say so in
 `KSP.log`.
 
-**Why the default.** The stock joint stays exactly as it is, limits and springs included: giving its twist
-a proper lower limit would let a target act, but would also let every joint twist as easily as it bends.
+**Why use it.** The stock joint stays exactly as it is, limits and springs included: giving its twist a
+proper lower limit would let a target act, but would also let every joint twist as easily as it bends.
+It is also the only mode that works without KSP Community Fixes.
 
 **→ Details: [How OriginalPose works](docs/the-fix.md#how-originalpose-works)**
 
@@ -103,11 +104,14 @@ maintainers of KSP Community Fixes to try it in game.
 
 **→ Details: [How TwistLimitKSPCF works](docs/the-fix.md#how-twistlimitkspcf-works)**
 
-### `TwistLimit`
+### `TwistLimit`, the default
 
 The same, for every part joint KSP sets up: attach joints, and every autostrut, those `AutoStrutDrift`
 leaves alone included. `AutoStrutDrift` stays on. This changes the game the most: every joint of every
 vessel then twists as easily as it bends.
+
+**Why the default.** It fixes the stock slip everywhere it is made, instead of working around it, and lets
+`AutoStrutDrift` do its job as written. It needs KSP Community Fixes: without it, choose `OriginalPose`.
 
 **→ Details: [How TwistLimit works](docs/the-fix.md#how-twistlimit-works)**
 
@@ -155,8 +159,8 @@ Copy the `GameData\KSPFixAutoStrut` folder into the `GameData` folder of KSP. It
 `GameData\KSPFixAutoStrut\PluginData\settings.cfg` is read once, when KSP starts:
 
 ```
-// OriginalPose (the default), TwistLimitKSPCF or TwistLimit.
-mode = OriginalPose
+// OriginalPose, TwistLimitKSPCF or TwistLimit (the default).
+mode = TwistLimit
 
 // How much the mod writes to KSP.log: Error, Warning, Info or Debug.
 logLevel = Info
@@ -164,8 +168,9 @@ logLevel = Info
 
 - `mode`, one of three: `OriginalPose` sets rebuilt autostruts up on the vessel's original shape and turns
   `AutoStrutDrift` of KSP Community Fixes off; `TwistLimitKSPCF` gives the twist of the autostruts
-  `AutoStrutDrift` handles a proper range and leaves it on; `TwistLimit` does the same for every part joint.
-  The last two change how stiff joints are (see [The fix](docs/the-fix.md#three-modes)).
+  `AutoStrutDrift` handles a proper range and leaves it on; `TwistLimit`, the default, does the same for
+  every part joint. The last two change how stiff joints are (see [The fix](docs/the-fix.md#three-modes))
+  and need KSP Community Fixes.
 - At `Debug`, the mod writes one line to `KSP.log` for every autostrut built in flight, with how far its
   part was from the vessel's original layout at that instant.
 

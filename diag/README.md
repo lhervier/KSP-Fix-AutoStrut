@@ -12,6 +12,6 @@ Described in [Checking the culprit: a rollover](../docs/checking-the-culprit-rol
 - [automation/run-rollover.py](automation/run-rollover.py): the script that plays it through
   [KSP-Util-MCPServer](https://github.com/lhervier/KSP-Util-MCPServer). Python 3 only, nothing to install.
 - `checking-the-culprit-rollover/stock/`, `fix/`, `twist-limit-kspcf/` and `twist-limit/`: for each series,
-  on stock, with this mod in its default `OriginalPose` mode, in its `TwistLimitKSPCF` mode and in its
+  on stock, with this mod in its `OriginalPose` mode, in its `TwistLimitKSPCF` mode and in its default
   `TwistLimit` mode, `runs.json` (what the script printed) and `KSP.log`. The screenshots are in
   [../imgs/checking-the-culprit-rollover/](../imgs/checking-the-culprit-rollover/).

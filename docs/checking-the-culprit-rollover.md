@@ -10,8 +10,8 @@ KSP 1.12.5 with [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommu
 Harmony and ModuleManager it needs), the base most players run. *On stock* below means this install, with
 KSP Community Fixes as it ships: its `AutoStrutDrift` patch on. *With this mod* means this install with
 Auto Strut Fix 0.1.0, its log level set to `Debug` in `PluginData/settings.cfg`, in one of its three modes
-(see [The fix](the-fix.md#three-modes)): `OriginalPose`, the default, which turns `AutoStrutDrift` off,
-`TwistLimitKSPCF` and `TwistLimit`, which leave it on. [KSP-Util-MCPServer](https://github.com/lhervier/KSP-Util-MCPServer) is installed
+(see [The fix](the-fix.md#three-modes)): `OriginalPose`, which turns `AutoStrutDrift` off,
+`TwistLimitKSPCF` and `TwistLimit` (the default), which leave it on. [KSP-Util-MCPServer](https://github.com/lhervier/KSP-Util-MCPServer) is installed
 too, to play the protocol by script.
 
 ## The protocol
@@ -63,13 +63,13 @@ turn.*
 
 The same install, one series in each of the three modes, set by `mode` in `PluginData/settings.cfg`:
 
-- `OriginalPose`, the default: the mod sets each new autostrut up on the original layout and turns
+- `OriginalPose`: the mod sets each new autostrut up on the original layout and turns
   `AutoStrutDrift` off. Try 2 did not end on the rover's wheels and was dropped; tries 1, 3 and 4 count.
 - `TwistLimitKSPCF`: the mod fixes the lower twist limit of the autostruts `AutoStrutDrift` handles, and
   leaves it on to bring the parts back by itself. The first three tries count.
-- `TwistLimit`: the mod fixes the lower twist limit of every part joint KSP sets up, attach joints and every
-  autostrut included, and leaves `AutoStrutDrift` on. Tries 1 and 4 did not end on the rover's wheels and
-  were dropped; tries 2, 3 and 5 count.
+- `TwistLimit`, the default: the mod fixes the lower twist limit of every part joint KSP sets up, attach
+  joints and every autostrut included, and leaves `AutoStrutDrift` on. Tries 1 and 4 did not end on the
+  rover's wheels and were dropped; tries 2, 3 and 5 count.
 
 In every try that counts, the rover lost two parts and landed on its wheels. None of them turned, in any
 mode: the one degree of `OriginalPose` try 3 is the navball rounding to the degree.

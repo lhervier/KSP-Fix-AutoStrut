@@ -105,18 +105,18 @@ was built, tuned and flown with joints whose twist is held by the limit.
 
 - **Fix the lower limit of every joint**, in `PartJoint.SetJointLimits`: the stock code then does what it
   seems to mean, `AutoStrutDrift` works, and every joint of every craft twists as much as it bends. This mod
-  can play it, in its `TwistLimit` mode (see
+  does it by default, in its `TwistLimit` mode (see
   [Checking the culprit: a rollover](checking-the-culprit-rollover.md#with-this-mod)).
 - **Fix it for the autostruts `AutoStrutDrift` rebuilds only**: `AutoStrutDrift` works, the other joints stay
   as they are, and those autostruts twist as much as they bend. This mod can play it, in its
   `TwistLimitKSPCF` mode (see
   [Checking the culprit: a rollover](checking-the-culprit-rollover.md#with-this-mod)).
 - **Set the rebuilt autostrut up on the original pose**, so that its target needs no turning at all: the
-  joint stays exactly as stock makes it, limit included. That is what this mod does by default, in its
+  joint stays exactly as stock makes it, limit included. That is what this mod does in its
   `OriginalPose` mode (see [The fix](the-fix.md)).
 
 In both twist limit modes, with `AutoStrutDrift` on, the rovers of the rollover protocol no longer turn.
 Which of these ways belongs in KSP Community Fixes is for its maintainers to judge, and the three modes of
-this mod are there to let them try each in game. By default it takes the third, and, since it then rewrites
-everything `AutoStrutDrift` sets up, turns `AutoStrutDrift` off (see
-[The fix](the-fix.md#with-ksp-community-fixes)).
+this mod are there to let them try each in game. By default it takes the first, and leaves `AutoStrutDrift`
+on; in `OriginalPose` mode, since it then rewrites everything `AutoStrutDrift` sets up, it turns
+`AutoStrutDrift` off (see [The fix](the-fix.md#with-ksp-community-fixes)).
