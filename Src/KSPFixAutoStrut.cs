@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using HarmonyLib;
 using UnityEngine;
 
@@ -16,7 +17,9 @@ namespace com.github.lhervier.ksp.fix.autostrut
         private void Start()
         {
             Settings.Load();
-            Log.Info($"Version {typeof(KSPFixAutoStrut).Assembly.GetName().Version}, mode {Settings.Mode}, " +
+            string version = typeof(KSPFixAutoStrut).Assembly
+                .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            Log.Info($"Version {version}, mode {Settings.Mode}, " +
                 $"log level {Log.Level}");
             Harmony harmony = new Harmony(HarmonyId);
             try
