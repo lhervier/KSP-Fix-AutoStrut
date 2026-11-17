@@ -3,7 +3,7 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>KSPFixAutoStrut</AssemblyName>
     <RootNamespace>com.github.lhervier.ksp.fix.autostrut</RootNamespace>
-    <Version>0.2.0</Version>
+    <Version>0.1.1-dev</Version>
     <Description>Makes the autostruts KSP rebuilds while a vessel is bent hold the vessel's original shape</Description>
     <!-- Straight into the folder that gets copied to the GameData of KSP. -->
     <OutputPath>GameData\KSPFixAutoStrut</OutputPath>
